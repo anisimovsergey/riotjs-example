@@ -1,18 +1,14 @@
-# Moikot web
+# A RiotJS sample application
 
-Simple demo of customizing `Bootstrap` CSS styles using `Gulp`.
-
-## Usage
-
-1. Check out or download this demo project.
-2. Run command in your terminal:
-
+In one console
 ```
-$ cd customize-bootstrap-sass
+$ git clone https://sergey-anisimov/riotjs-example
+$ cd riotjs-example
 $ npm install
 $ gulp
 ```
-
-Then you can see the customized result by opening `demo.html` in your browser.
-
-A detailed [tutorial](http://www.codevoila.com/post/32/create-customized-bootstrap-build-using-bootstrap-sass-and-gulp) is also available. 
+In another console
+```
+$ node ./server/server.js
+```
+Open http://localhost:8000/index.html in your browser.
