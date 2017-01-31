@@ -1,9 +1,9 @@
 @import "override-variables";
-
-@import "bootstrap-custom"; // @import "bootstrap";
+@import "bootstrap-custom";
+//@import "bootstrap";
 //@import "bootstrap/theme";
 
-@import "fonta";
+@import "font-awesome";
 
 body {
   padding-top: 10px;
