@@ -12,14 +12,6 @@ var
     source = 'src/',
     dest = 'dist/';
 
-// Bootstrap scss source
-var bootstrapSass = { in : './node_modules/bootstrap-sass/'
-};
-
-// Bootstrap native source
-var bootstrapNative = { in : './node_modules/bootstrap.native/'
-};
-
 // Fecth REST polyfill
 var fetch = { in : './node_modules/whatwg-fetch/'
 };
@@ -33,16 +25,10 @@ var css = { in : source + 'scss/main.scss',
     out: dest + 'css/',
     watch: source + 'scss/**/*',
     sassOpts: {
-        outputStyle: 'nested',
-        precision: 8,
-        errLogToConsole: true,
-        includePaths: [bootstrapSass.in + 'assets/stylesheets']
+      outputStyle: 'nested',
+      precision: 8,
+      errLogToConsole: true
     }
-};
-
-var bootstrapJs = { in : bootstrapNative.in + 'dist/bootstrap-native.js',
-    distName: 'bootstrap-native',
-    out: dest + 'js/'
 };
 
 var riotJs = { in : riot.in + '/riot+compiler.min.js',
@@ -62,7 +48,7 @@ var html = { in : source + '*.html',
     watch: source + '*.html'
 };
 
-var icon = { 
+var icon = {
     in : source + '*.ico',
     out: dest
 };
@@ -71,31 +57,6 @@ var tags = { in : source + 'tags/*.tag',
     out: dest + 'tags/',
     watch: source + 'tags/*.tag',
 };
-
-gulp.task('bootstrapJs', function() {
-    var srcDir = bootstrapNative.in + 'lib/';
-    // array of source files to build
-    var sources = [
-        //      srcDir + 'affix-native.js',
-        //      srcDir + 'alert-native.js',
-        //      srcDir + 'button-native.js',
-        //      srcDir + 'carousel-native.js',
-        //      srcDir + 'collapse-native.js',
-        srcDir + 'dropdown-native.js' //,
-        //      srcDir + 'modal-native.js',
-        //      srcDir + 'popover-native.js',
-        //      srcDir + 'scrollspy-native.js',
-        //      srcDir + 'tab-native.js',
-        //      srcDir + 'tooltip-native.js'
-    ];
-    return gulp
-        .src(sources)
-        .pipe(concat(bootstrapJs.distName + ".js"))
-	.pipe(uglify())
-        .pipe(gulp.dest(bootstrapJs.out))
-	.pipe(gzip())
-        .pipe(gulp.dest(bootstrapJs.out));
-});
 
 gulp.task('appTags', function() {
     return gulp
@@ -151,7 +112,8 @@ gulp.task('font', function() {
 });
 
 // default task
-gulp.task('default', ['sass', 'font', 'html', 'icon', 'bootstrapJs', 'fetch', 'riot', 'appTags'], function() {
+gulp.task('default', ['sass', 'font', 'html', 'icon',
+  'fetch', 'riot', 'appTags'], function() {
     liveReload.listen();
     gulp.watch(css.watch, ['sass']);
     gulp.watch(html.watch, ['html']);

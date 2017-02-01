@@ -11,4 +11,4 @@ In another console
 ```
 $ node ./server/server.js
 ```
-Open http://localhost:8000/index.html in your browser.
+Open http://localhost:8000 in your browser.

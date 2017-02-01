@@ -1,193 +1,55 @@
-@import "override-variables";
-@import "bootstrap-custom";
-//@import "bootstrap";
-//@import "bootstrap/theme";
-
 @import "font-awesome";
 
 body {
-  padding-top: 10px;
+  font-family: 'myriad pro', sans-serif;
+  font-size: 20px;
+  border: 0;
 }
 
-.form-connect {
-  max-width: 330px;
-  margin: 0 auto;
+todo {
+  display: block;
+  max-width: 400px;
+  margin: 5% auto;
 }
 
-h1 {
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+form input {
+  font-size: 85%;
+  padding: .4em;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+button {
+  background-color: #1FADC5;
+  border: 1px solid rgba(0,0,0,.2);
+  font-size: 75%;
+  color: #fff;
+  padding: .4em 1.2em;
+  border-radius: 2em;
+  cursor: pointer;
+  margin: 0 .23em;
+  outline: none;
+}
+
+button[disabled] {
+  background-color: #ddd;
+  color: #aaa;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: .2em 0;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #ccc;
 }
 
 label {
-  font-size: 18px;
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
-}
-
-.icon-spacer::before,
-.icon-blank::before {
-  width: 1em;
-  content: ' ';
-}
-
-.dropdown-menu > li > a {
-  padding: 8px 20px;
-}
-
-input[type="text"], input[type="password"] {
-  -webkit-appearance:none;  /* Remove default shadow */
-}
-
-// Dropdown button
-.dropdown-button {
-    width: 12px;
-    height: 20px;
-  pointer-events:none;
-}
-
-// Custom caret
-.dropdown-caret {
-    position: relative;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 0;
-    margin-right: 1px;
-    vertical-align: middle;
-    border-top: 6px dashed;
-    border-top: 4px solid \9;
-    border-right: 6px solid transparent;
-    border-left: 6px solid transparent;
-    opacity: 0;
-    transition-delay: .1s;
-    transition-duration: .3s ease;
-}
-
-.pull-right {
-    float: right!important;
-}
-.glyphicon {
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-// Spinner from Tobias Ahlin
-// http://tobiasahlin.com/spinkit/
-
-.spinner {
-  width: 26px;
-  height: 26px;
-
-  position: absolute;
-  margin: -3px -5px -3px -7px;
-  transition: all .3s ease;
-}
-
-.double-bounce1, .double-bounce2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #333;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
-}
-
-.double-bounce2 {
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
-}
-
-@-webkit-keyframes sk-bounce {
-  0%, 100% { -webkit-transform: scale(0.0) }
-  50% { -webkit-transform: scale(1.0) }
-}
-
-@keyframes sk-bounce {
-  0%, 100% {
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 50% {
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-  }
-}
-
-// Signal strength based on
-// http://codepen.io/johno/pen/LkaiI
-// http://jsfiddle.net/Unspecified/uVH8s/
-
-.signal-bars {
-  display: inline-block;
-  height: 16px;
-  list-style: none;
-  overflow: hidden;
-  padding: 0px;
-  margin: 0px;
-}
-
-.signal-bars .bar {
-  display: inline-block;
-  width: 4px;
-  float: left;
-  height: 100%;
-  margin-right: 2px;
-}
-
-.signal-bars .bar.first-bar {
-  padding-top: 12px;
-}
-
-.signal-bars .bar.second-bar {
-  padding-top: 8px;
-}
-
-.signal-bars .bar.third-bar {
-  padding-top: 4px;
-}
-
-.signal-bars .bar.fourth-bar {
-  padding-top: 0px;
-}
-
-.signal-bars li div {
-  height: 100%;
-}
-
-.bars-4 div {
-  background-color: #16a085;
-  border: thin solid darken(#16a085, 7%);
-}
-
-.bars-3 div,
-.bars-2 div {
-  background-color: #f1c40f;
-  border: thin solid darken(#f1c40f, 7%);
-}
-
-.bars-1 div {
-  background-color: #e74c3c;
-  border: thin solid darken(#e74c3c, 20%);
-}
-
-.bars-3 .bar.fourth-bar div,
-.bars-1 .bar:not(.first-bar) div,
-.bars-2 .bar:not(.first-bar):not(.second-bar) div {
-  background-color: #fafafa;
-  border: thin solid #f3f3f3;
+  cursor: pointer;
 }
