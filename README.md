@@ -1,4 +1,4 @@
-# A RiotJS sample application
+# A RiotJS example application
 
 In one console
 ```
@@ -12,3 +12,5 @@ In another console
 $ node ./server/server.js
 ```
 Open http://localhost:8000 in your browser.
+Open http://localhost:8000 on another tab.
+Try to add some todos and observe them appearing on two tabs.
